@@ -1,0 +1,16 @@
+{% extends 'AppTickets/base.html' %}
+{% load static %}
+
+{% block title %}
+    Event search
+{% endblock title %}
+
+
+{% block mainProducts %}
+    <h2>Search an event for a given pattern</h2>
+    <form action="/search_event" method="get">
+        {% csrf_token %}
+        <p>Pattern to be searched: <input type="text" name="search" id="search"></p>
+        <input type="submit" value="Send">
+    </form>
+{% endblock mainProducts %}

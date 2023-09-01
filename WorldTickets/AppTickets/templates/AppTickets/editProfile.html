@@ -1,0 +1,43 @@
+{% extends 'AppTickets/base.html' %}
+{% load static %}
+
+{% block title %}
+    Edit profile
+{% endblock title %}
+
+
+{% block mainProducts %}
+    <!-- <h2>Edit profile</h2> -->
+    <form action="" method="post">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }} <!-- Shows all the fields in form as table-->
+        </table>
+        </p>
+        <input type="submit" value="Click to update">
+
+    </form>
+
+        <!--<div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="{% url 'add_avatar' %}">Modify avatar</a>
+        </div>-->
+    
+    <!--<table>-->
+        <!--<tr> -->
+        <!--    <td width="200"><h2>Clients</h2></td>-->
+        <!--    <td> -->
+        <!--        <a -->
+        <!--        href="{% url 'add_avatar' %}" -->
+        <!--        class="btn btn-primary btn-sm" -->
+        <!--        ><i class="fa fa-camera-retro fa-2x" title="Change avatar"> </i> -->
+        <!--        </a> -->
+        <!--    </td> -->
+        <!--</tr> -->
+    <!--</table>-->
+
+    <!--<p class="text-center">-->
+    </p>
+    Want to change your avatar?<a href="{% url 'add_avatar' %}"> Click here</a></p>
+    Want to change your password?<a href="{% url 'cambiar_password' %}"> Click here</a></p>
+
+{% endblock mainProducts %}

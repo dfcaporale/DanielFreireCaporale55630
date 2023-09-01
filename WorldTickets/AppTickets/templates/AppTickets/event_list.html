@@ -1,0 +1,74 @@
+{% extends 'AppTickets/base.html' %}
+{% load static %}
+
+{% block title %}
+    World Tickets
+{% endblock title %}
+
+
+{% block content %}
+    <h3>Events</h3>
+{% endblock content %}
+
+{% block mainProducts %}
+
+<!--<td width="200"><h2>Get in touch with the community</h2></td>-->
+
+{% if user.is_superuser %}
+        <table>
+            <tr>
+                <!--<td width="200"><h2>Clients</h2></td>-->
+                <td>
+                    <a
+                    href="{% url 'create_evento' %}"
+                    class="btn btn-primary btn-sm"
+                    ><i class="fa fa-plus fa-lg" title="New Record"> </i>
+                    </a>
+                </td>
+            </tr>
+        </table>
+{% endif %}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <!--<th>{{ Id }}</th>-->
+            <th>Event</th>
+            <th>Artist</th>
+            <th>Venue</th>
+            <th>Date</th>
+            <th>Sold out</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for cli in event_list %} <!-- field name in the path from urlpatterns -->
+        <tr> 
+            <!--<td>{{ a.id }}</td>-->
+            <td>{{ cli.event_name }}</td>
+            <td>{{ cli.artist }}</td>
+            <td>{{ cli.venue }}</td>
+            <td>{{ cli.date }}</td>
+            <td>{{ cli.soldOut }}</td>
+
+            
+                {% if user.is_superuser %}
+                    <td>
+                        <a
+                        href="{% url 'update_evento' cli.id %}"
+                        class="btn btn-primary"
+                        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                        ><i class="fa fa-edit fa-sm" title="Edit Record"></i>
+                        </a>
+                        <a
+                        href="{% url 'delete_evento' cli.id %}"
+                        class="btn btn-danger"
+                        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                        ><i class="fa fa-trash fa-sm" title="Delete Record"></i>
+                        </a>
+                    </td>
+                    {% endif %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock mainProducts %}

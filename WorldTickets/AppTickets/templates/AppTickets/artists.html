@@ -1,0 +1,32 @@
+{% extends 'AppTickets/base.html' %}
+{% load static %}
+
+{% block title %}
+    World Tickets
+{% endblock title %}
+
+
+{% block content %}
+    <h3>Artists</h3>
+{% endblock content %}
+
+{% block mainProducts %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <!--<th>{{ Id }}</th>-->
+            <th>Artist</th>
+            <th>Webpage</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for a in artistas %}
+        <tr> 
+            <!--<td>{{ a.id }}</td>-->
+            <td>{{ a.name }}</td>
+            <td>{{ a.webpage }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock mainProducts %}

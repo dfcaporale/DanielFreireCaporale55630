@@ -1,0 +1,34 @@
+{% extends 'AppTickets/base.html' %}
+{% load static %}
+
+{% block title %}
+    World Tickets
+{% endblock title %}
+
+
+{% block content %}
+    <h3>Clients</h3>
+{% endblock content %}
+
+{% block mainProducts %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <!--<th>{{ Id }}</th>-->
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for cli in clientes %} <!-- field name in the path from urlpatterns -->
+        <tr> 
+            <!--<td>{{ a.id }}</td>-->
+            <td>{{ cli.firstName }}</td>
+            <td>{{ cli.lastName }}</td>
+            <td>{{ cli.email }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock mainProducts %}

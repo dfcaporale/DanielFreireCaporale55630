@@ -1,0 +1,42 @@
+{% extends 'AppTickets/base.html' %}
+{% load static %}
+
+{% block title %}
+    World Tickets
+{% endblock title %}
+
+
+{% block content %}
+    <h3>Events</h3>
+{% endblock content %}
+
+{% block mainProducts %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <!--<th>{{ Id }}</th>-->
+            <th>Event</th>
+            <th>Artist</th>
+            <!--<th>Country</th>-->
+            <!--<th>City</th>-->
+            <th>Venue</th>
+            <th>Date</th>
+            <th>Sold Out</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for e in eventos %}
+        <tr> 
+            <!--<td>{{ a.id }}</td>-->
+            <td>{{ e.event_name }}</td>
+            <td>{{ e.artist }}</td>
+            <!--<td>{{ e.country }}</td>-->
+            <!--<td>{{ e.city }}</td>-->
+            <td>{{ e.venue }}</td>
+            <td>{{ e.date }}</td>
+            <td>{{ e.soldOut }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock mainProducts %}

@@ -1,0 +1,18 @@
+{% extends 'AppTickets/base.html' %}
+{% load static %}
+
+{% block title %}
+    New client
+{% endblock title %}
+
+
+{% block mainProducts %}
+    <h2>Add a new client to the database</h2>
+    <form action="" method="post">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }} <!-- Shows all the fields in form as table-->
+        </table>
+        <input type="submit" value="Send">
+    </form>
+{% endblock mainProducts %}
