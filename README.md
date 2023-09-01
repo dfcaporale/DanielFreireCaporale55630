@@ -20,3 +20,5 @@ The database consists of the following models: `Event`, `Artist`, `Client`, and 
 
 The administrator can access the system using the following credentials: `admin`:`12345`.
 For all other users, the default password is `*daniel*`.
+
+### Video showing the functionalities of the app: [LINK](https://drive.google.com/file/d/1xR4z5CGxbaHOTqzNbnvt9pdAEgo0oQko/view?usp=sharing)
